@@ -1,0 +1,42 @@
+Japanese transcript cross-check (local only)
+
+The cross-check keeps the source ASR draft unchanged. Each result is a separate
+triage hypothesis; it does not establish transcript accuracy or human approval.
+
+Pinned stack
+- Python 3.12 project environment: .venv-asr
+- faster-whisper 1.2.1, CTranslate2 4.6.0, PyAV 18.1.0, setuptools 80.9.0
+- Systran/faster-whisper-large-v3 at HF revision
+  edaa852ec7e145841d8ffdb056a99866b5f0a478 (model card license: MIT).
+  Official HF API reports model.bin size 3,087,284,237 bytes and LFS SHA256
+  69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1.
+- Download cache: .cache_hf/asr; installed wheels cache: .cache_uv/asr
+- GPU mode: CUDA, int8_float16, one clip at a time, beam size 5, Japanese
+  transcription, VAD and word timestamps, no initial prompt, no prior text.
+- The runner adds the existing Qwen Torch CUDA DLL folder to this process only.
+  It does not install system DLLs or modify global PATH.
+- PyAV is pinned below 19: faster-whisper 1.2.1 currently passes the
+  `metadata_errors` argument removed by PyAV 19.
+
+Run from the project root in PowerShell after the extracted manifest and pinned
+model snapshot exist:
+
+  .\.venv-asr\Scripts\python.exe .\tools\check_nino_asr.py
+  .\.venv-asr\Scripts\python.exe .\tools\merge_dataset_asr.py
+
+The transcription command runs all eligible clips in one shared model process.
+Re-running resumes only for matching clip ID, actual WAV SHA256, model revision
+and settings. Results append to outputs/dataset/asr_checks.jsonl. The merge creates a separate
+outputs/dataset/manifest_asr.jsonl and asr_summary.json; it preserves source
+text, audio metadata and pending human review.
+
+Review-priority flags identify empty hypotheses, normalized character
+disagreement above 0.35, average log probability below -1, no-speech
+probability above 0.6, or word timestamps within 0.1 seconds of a clip edge.
+Character disagreement is only a review cue, not WER or a ground-truth score;
+Japanese kanji/kana variants can create false flags. ASR disagreement never
+rewrites text, excludes a clip, or approves it automatically.
+
+If CUDA loading fails, keep the error and stop. CPU int8 is an explicit
+fallback via --cpu only after a concrete GPU blocker; do not run both modes
+without a reason. Do not start a second model process concurrently.

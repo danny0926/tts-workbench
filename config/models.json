@@ -1,0 +1,307 @@
+{
+  "registry_type": "planned_comparison_scope",
+  "models": [
+    {
+      "id": "qwen_cv06",
+      "hf_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "local_smoke",
+      "role": "smoke",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+      "notes": "Local smoke only; checkpoint support and license must be pinned.",
+      "checkpoint_sha": "85e237c12c027371202489a0ec509ded67b5e4b5",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "qwen_b06",
+      "hf_id": "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "5d83992436eae1d760afd27aff78a71d676296fc",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "qwen_b17",
+      "hf_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "fd4b254389122332181a7c3db7f27e918eec64e3",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "irod_small",
+      "hf_id": "Aratako/Irodori-TTS-v4.1-Small",
+      "languages": [
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "native-japanese",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/Aratako/Irodori-TTS-v4.1-Small",
+      "notes": "Small checkpoint; verify MIT metadata against pinned checkpoint.",
+      "checkpoint_sha": "2b28324dc263ed5e6638b3cf3dd94c82ead07b4b",
+      "checkpoint_license": "mit",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "irod_small_mf",
+      "hf_id": "Aratako/Irodori-TTS-v4.1-Small-MF",
+      "languages": [
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "native-japanese",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/Aratako/Irodori-TTS-v4.1-Small-MF",
+      "notes": "Small-MF checkpoint; verify MIT metadata against pinned checkpoint.",
+      "checkpoint_sha": "ccc78f5d480b6e51b69b2d5042a14c4da04fea6e",
+      "checkpoint_license": "mit",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "irod_large",
+      "hf_id": "Aratako/Irodori-TTS-v4-Large",
+      "languages": [
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "native-japanese",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/Aratako/Irodori-TTS-v4-Large",
+      "notes": "Large checkpoint; Gemma terms may apply; inspect checkpoint license.",
+      "checkpoint_sha": "2e0c55428ce97268a507f1feeb2478f8d9148e8b",
+      "checkpoint_license": "gemma",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "voxcpm2",
+      "hf_id": "openbmb/VoxCPM2",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/openbmb/VoxCPM2",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "32279effe8c19989596f05d353d1447f51d9e915",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "indextts25",
+      "hf_id": "IndexTeam/IndexTTS-2.5",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/IndexTeam/IndexTTS-2.5",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "c39ce5ba981572cb187443877ff559dfb246ce63",
+      "checkpoint_license": "other",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "fish_s2",
+      "hf_id": "fishaudio/s2-pro",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/fishaudio/s2-pro",
+      "notes": "Research-use terms noted; verify checkpoint-specific license.",
+      "checkpoint_sha": "1de9996b6be38b745688de084d87a5633f714e4e",
+      "checkpoint_license": "other",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "fish_drama3",
+      "hf_id": "fishaudio/drama-3",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/fishaudio/drama-3",
+      "notes": "Community terms noted; verify checkpoint-specific license.",
+      "checkpoint_sha": "78e5ab79e49aa9a25abe8799eff2c4d73a1c3216",
+      "checkpoint_license": "other",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "moss15",
+      "hf_id": "OpenMOSS-Team/MOSS-TTS-v1.5",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/OpenMOSS-Team/MOSS-TTS-v1.5",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "cdd3b911b1585e3f2dbc7775ef10f9926f58850a",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "cosy3",
+      "hf_id": "FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "29e01c4e8d000f4bcd70751be16fa94bf3d85a18",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "omnivoice",
+      "hf_id": "k2-fsa/OmniVoice",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/k2-fsa/OmniVoice",
+      "notes": "Known card distinction: code Apache-2.0, weights CC-BY-NC; confirm pinned revision. API cardData license unavailable; unknown.",
+      "checkpoint_sha": "c5fdb5ccb189668d56333f77ba2629f4cd7535f4",
+      "checkpoint_license": null,
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "higgs34",
+      "hf_id": "bosonai/higgs-tts-3-4b",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/bosonai/higgs-tts-3-4b",
+      "notes": "Creator-use grant exists alongside other restrictions; inspect full pinned terms.",
+      "checkpoint_sha": "239f63fb7b02b1aa085f98d9efae5e35cc5523e8",
+      "checkpoint_license": "other",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "ming30",
+      "hf_id": "inclusionAI/Ming-3.0-tts-0.5B",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/inclusionAI/Ming-3.0-tts-0.5B",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "7247f4c94a5b2e987404ed28a5cfec41b1a4ca61",
+      "checkpoint_license": "mit",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "firered3",
+      "hf_id": "FireRedTeam/FireRedTTS3",
+      "languages": [
+        "Chinese",
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "core",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/FireRedTeam/FireRedTTS3",
+      "notes": "Support and license must be tied to pinned checkpoint.",
+      "checkpoint_sha": "dcf1bdcd1b8b25b382fa84c3e34eb82e3054a610",
+      "checkpoint_license": "apache-2.0",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "breeze2",
+      "hf_id": "BreezeBlue/Breeze-TTS-2",
+      "languages": [
+        "Chinese",
+        "English"
+      ],
+      "mode": "reference_audio",
+      "role": "Chinese-only",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/BreezeBlue/Breeze-TTS-2",
+      "notes": "Chinese-only comparison role; verify exact language support and pinned license.",
+      "checkpoint_sha": "3e28c5151381a722f1d8661b4118c298caa77aa4",
+      "checkpoint_license": "other",
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    },
+    {
+      "id": "sarashina22",
+      "hf_id": "sbintuitions/sarashina2.2-tts",
+      "languages": [
+        "Japanese"
+      ],
+      "mode": "reference_audio",
+      "role": "native-japanese",
+      "status": "planned",
+      "model_card_url": "https://huggingface.co/sbintuitions/sarashina2.2-tts",
+      "notes": "Support and license must be tied to pinned checkpoint. API cardData license unavailable; unknown.",
+      "checkpoint_sha": "8d30bd523b1fa217ab0b4cd32c9275d4f222fbcd",
+      "checkpoint_license": null,
+      "metadata_status": "ok",
+      "license_scope_note": "Model-card metadata is not proof that code and weights share a license; verify support and license for the pinned checkpoint."
+    }
+  ]
+}

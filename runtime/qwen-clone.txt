@@ -1,0 +1,46 @@
+Qwen3-TTS local Nino voice-clone smoke run
+=========================================
+
+Checkpoint: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+Pinned revision: 5d83992436eae1d760afd27aff78a71d676296fc
+Environment: .venv-qwen, Python 3.12.10, torch 2.8.0+cu126, qwen-tts 0.1.1
+GPU run: RTX 3050 Ti Laptop, BF16, SDPA
+
+PowerShell setup (keeps HF/uv files in the workspace and uses the cached pinned model):
+
+```powershell
+$env:UV_CACHE_DIR=Join-Path $PWD '.cache_uv'
+$env:HF_HOME=Join-Path $PWD '.cache_hf'
+$env:HF_HUB_OFFLINE='1'
+$env:PYTHONUTF8='1'
+```
+
+Japanese x-vector-only sample (no transcript was supplied to this mode):
+
+```powershell
+.\.venv-qwen\Scripts\python.exe runtime\qwen_clone.py --text '仕事の帰りに駅前の店へ寄って、パンと牛乳を買いました。' --language Japanese --sample-id xvector-ja-neutral-01 --ref-audio audio\nino\qwen_short.wav --x-vector-only --output-dir outputs\nino-qwen\xvector
+```
+
+Japanese ICL and Chinese cross-language batch. The reference transcript is the exact staged ASR draft; it has not been verified against the audio:
+
+```powershell
+.\.venv-qwen\Scripts\python.exe runtime\qwen_clone.py --prompts outputs\nino-qwen\icl-prompts.jsonl --ref-audio audio\nino\qwen_short.wav --ref-text-file audio\nino\qwen_short_transcript_asr_draft.txt --ref-transcript-provenance asr_draft --output-dir outputs\nino-qwen\icl
+```
+
+Outputs (each WAV has a same-name JSON metadata sidecar):
+
+- `outputs/nino-qwen/xvector/xvector-ja-neutral-01.wav`
+- `outputs/nino-qwen/icl/ja-neutral-01.wav`
+- `outputs/nino-qwen/icl/ja-context-01.wav`
+- `outputs/nino-qwen/icl/ja-mixed-01.wav`
+- `outputs/nino-qwen/icl/zh-neutral-01.wav`
+
+The ICL JSON records `ref_transcript_provenance: asr_draft` and `ref_transcript_audio_reviewed: false`. The reference clip retains its original background audio. These local smoke outputs do not establish listening quality or cloning quality.
+
+Long-reference matched comparison (prepared; run only after the coordinator confirms the other model has exited):
+
+```powershell
+.\.venv-qwen\Scripts\python.exe runtime\qwen_clone.py --text '仕事の帰りに駅前の店へ寄って、パンと牛乳を買いました。' --language Japanese --sample-id ja-neutral-01 --ref-audio audio\nino\irodori_33s_concat.wav --ref-text-file audio\nino\irodori_33s_concat_transcript_asr_draft.txt --ref-transcript-provenance asr_draft --output-dir outputs\nino-qwen\icl-longref --device cuda:0 --dtype bfloat16 --seed 1234 --max-new-tokens 512 --revision 5d83992436eae1d760afd27aff78a71d676296fc
+```
+
+This produces `outputs/nino-qwen/icl-longref/ja-neutral-01.wav` and its JSON sidecar. The prepared reference WAV was verified as 33.05 s, mono, 24 kHz; metadata records the measured reference duration and waveform hash. Transcript remains an unreviewed ASR draft.

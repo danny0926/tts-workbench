@@ -1,0 +1,25 @@
+# Windows CPU inference setup for the official vendor/irodori-tts infer.py path.
+# This workspace uses uv-managed CPython 3.11.14 from the user install; verify
+# with `uv python list --only-installed`, then create the isolated project env:
+# Create a dedicated Python 3.11 virtual environment for this historical CPU profile.
+# uv venv --python 3.11 .venv-irodori-cpu
+# Install torch/torchaudio/torchcodec from the official CPU wheel index first:
+# uv pip install --python .venv-irodori-cpu\Scripts\python.exe --index-url https://download.pytorch.org/whl/cpu torch==2.10.0 torchaudio==2.10.0 torchcodec==0.10.0
+# Then install this file. Training, Gradio, datasets, wandb, peft and torchao are
+# not imported by FP32 inference.
+transformers>=5.12.1,<6
+sentencepiece>=0.1.99,<0.2
+huggingface-hub>=0.34.0
+safetensors>=0.7.0
+soundfile>=0.12.0
+tqdm>=4.67.3
+dacvae @ git+https://github.com/facebookresearch/dacvae
+silentcipher @ git+https://github.com/SesameAILabs/silentcipher.git@d46d7d0893a583d8968ab3a6626e2289faec9152
+
+# Generate the three selected UTF-8 Japanese prompts sequentially with one
+# shared model load; existing WAV/JSON outputs are protected from overwrite.
+# .venv-irodori-cpu\Scripts\python.exe runtime\irodori_batch.py
+# To select prompts explicitly, repeat --id, e.g. --id ja-mixed-01 --id ja-context-01.
+
+# Focused caption/date/CFG variations are defined in UTF-8 and write into their own folder:
+# .venv-irodori-cpu\Scripts\python.exe runtime\irodori_batch.py --manifest outputs\nino-irodori\adjustments\prompts.jsonl --output-dir outputs\nino-irodori\adjustments --id ja-dates-spoken-01 --id ja-neutral-calm-caption-01 --id ja-neutral-speaker-cfg3-01

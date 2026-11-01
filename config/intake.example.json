@@ -1,0 +1,54 @@
+{
+  "clips": [
+    {
+      "wav": "../audio/reference/zh-TW/speaker-zh-01-1.wav",
+      "transcript": "../audio/reference/zh-TW/speaker-zh-01-1.txt",
+      "language": "zh-TW",
+      "speaker": "speaker-zh-01"
+    },
+    {
+      "wav": "../audio/reference/zh-TW/speaker-zh-01-2.wav",
+      "transcript": "../audio/reference/zh-TW/speaker-zh-01-2.txt",
+      "language": "zh-TW",
+      "speaker": "speaker-zh-01"
+    },
+    {
+      "wav": "../audio/reference/zh-TW/speaker-zh-01-3.wav",
+      "transcript": "../audio/reference/zh-TW/speaker-zh-01-3.txt",
+      "language": "zh-TW",
+      "speaker": "speaker-zh-01"
+    },
+    {
+      "wav": "../audio/reference/ja/speaker-01-1.wav",
+      "transcript": "../audio/reference/ja/speaker-01-1.txt",
+      "language": "ja",
+      "speaker": "speaker-ja-01"
+    },
+    {
+      "wav": "../audio/reference/ja/speaker-01-2.wav",
+      "transcript": "../audio/reference/ja/speaker-01-2.txt",
+      "language": "ja",
+      "speaker": "speaker-ja-01"
+    },
+    {
+      "wav": "../audio/reference/ja/speaker-01-3.wav",
+      "transcript": "../audio/reference/ja/speaker-01-3.txt",
+      "language": "ja",
+      "speaker": "speaker-ja-01"
+    }
+  ],
+  "held_out_optional": [
+    {
+      "wav": "../audio/held-out/zh-TW/speaker-01.wav",
+      "transcript": "../audio/held-out/zh-TW/speaker-01.txt",
+      "language": "zh-TW",
+      "speaker": "speaker-zh-01"
+    },
+    {
+      "wav": "../audio/held-out/ja/speaker-01.wav",
+      "transcript": "../audio/held-out/ja/speaker-01.txt",
+      "language": "ja",
+      "speaker": "speaker-ja-01"
+    }
+  ]
+}

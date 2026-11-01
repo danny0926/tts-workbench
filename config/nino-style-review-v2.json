@@ -1,0 +1,128 @@
+{
+  "schema": "nino-style-review-design-v1",
+  "dataset_id": "example-style-review-v2",
+  "sample_count": 1,
+  "context_padding_seconds": 4.0,
+  "parent_dataset_fingerprint": "replace-with-your-dataset-fingerprint",
+  "labels": {
+    "attitude": [
+      {
+        "id": "daily",
+        "label_zh": "平常／日常",
+        "caption_ja": "日常的な話し方。"
+      },
+      {
+        "id": "gentle",
+        "label_zh": "溫柔／關心",
+        "caption_ja": "相手を気遣う、やさしい話し方。"
+      },
+      {
+        "id": "affectionate",
+        "label_zh": "撒嬌／親暱",
+        "caption_ja": "親しい相手に甘えるような話し方。"
+      },
+      {
+        "id": "disdain",
+        "label_zh": "冷淡／嫌棄",
+        "caption_ja": "冷ややかで、相手を突き放すような口調。"
+      },
+      {
+        "id": "impatient",
+        "label_zh": "不耐／不滿",
+        "caption_ja": "いらだちや不満を含んだ口調。"
+      },
+      {
+        "id": "scolding",
+        "label_zh": "責備／強硬",
+        "caption_ja": "相手をたしなめる、きっぱりした口調。"
+      },
+      {
+        "id": "angry",
+        "label_zh": "生氣",
+        "caption_ja": "怒りを含んだ口調。"
+      },
+      {
+        "id": "surprised",
+        "label_zh": "驚訝",
+        "caption_ja": "驚きを含んだ話し方。"
+      },
+      {
+        "id": "sad",
+        "label_zh": "難過／失落",
+        "caption_ja": "悲しさをにじませた話し方。"
+      },
+      {
+        "id": "playful",
+        "label_zh": "俏皮／逗弄",
+        "caption_ja": "親しみを込めて、いたずらっぽくからかうような口調。"
+      }
+    ],
+    "effort": [
+      {
+        "id": "light",
+        "label_zh": "輕／放鬆",
+        "caption_ja": "力を抜いた声。"
+      },
+      {
+        "id": "medium",
+        "label_zh": "中等",
+        "caption_ja": "適度に力の入った声。"
+      },
+      {
+        "id": "strong",
+        "label_zh": "強／用力",
+        "caption_ja": "力を込めた声。"
+      }
+    ],
+    "delivery": [
+      {
+        "id": "conversation",
+        "label_zh": "自然對話",
+        "caption_ja": "自然な会話調。"
+      },
+      {
+        "id": "theatrical",
+        "label_zh": "戲劇化／抑揚明顯",
+        "caption_ja": "演劇的で抑揚の大きい話し方。"
+      },
+      {
+        "id": "raised_voice",
+        "label_zh": "提高聲量／喊叫",
+        "caption_ja": "声を張った話し方。"
+      },
+      {
+        "id": "quiet",
+        "label_zh": "低聲",
+        "caption_ja": "声量を抑えた話し方。"
+      },
+      {
+        "id": "whisper",
+        "label_zh": "耳語",
+        "caption_ja": "ささやくような声。"
+      },
+      {
+        "id": "reading",
+        "label_zh": "朗讀調",
+        "caption_ja": "読み上げるような話し方。"
+      }
+    ]
+  },
+  "decision_statuses": [
+    "draft",
+    "confirmed",
+    "needs_review"
+  ],
+  "decision_rules": {
+    "confirmed_requires": [
+      "heard_audio",
+      "attitude",
+      "effort",
+      "delivery"
+    ],
+    "caption_only_when_confirmed": true,
+    "confirmed_label_basis": "human_listening",
+    "official_or_fan_text_must_not_be_inferred": true,
+    "mixed_or_uncertain_action": "needs_review",
+    "retain_existing_quality_reviews": true
+  }
+}
